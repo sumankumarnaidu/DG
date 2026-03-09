@@ -1,0 +1,9 @@
+{
+	"name": "DataProd1",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8f784aa3-6b34-4b30-ade6-2f01b2c77e91",
+		"tenantId": "1ed08c67-fda6-46d7-9cd6-0c882d19f14d"
+	}
+}
