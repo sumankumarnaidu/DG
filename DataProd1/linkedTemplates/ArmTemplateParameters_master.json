@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "DataProd1"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"SqlServerforSumanDB_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://sumanstorage1.dfs.core.windows.net/"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0303-110507-h0ldamci"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "Suman"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "sumanssis1"
+		},
+		"SqlServerforSumanDB_properties_typeProperties_server": {
+			"value": "Suman"
+		},
+		"SqlServerforSumanDB_properties_typeProperties_database": {
+			"value": "Suman"
+		},
+		"SqlServerforSumanDB_properties_typeProperties_userName": {
+			"value": "suman"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
