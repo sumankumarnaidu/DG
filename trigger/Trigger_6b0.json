@@ -1,0 +1,24 @@
+{
+	"name": "Trigger_6b0",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopydataSumanDb",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 24,
+				"startTime": "2026-03-03T11:36:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

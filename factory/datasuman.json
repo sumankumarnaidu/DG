@@ -1,0 +1,9 @@
+{
+	"name": "datasuman",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "da619ffc-c7bf-41ad-aaa8-1b13cc573def",
+		"tenantId": "1ed08c67-fda6-46d7-9cd6-0c882d19f14d"
+	}
+}
