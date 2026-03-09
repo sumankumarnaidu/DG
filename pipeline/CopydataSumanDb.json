@@ -1,0 +1,201 @@
+{
+	"name": "CopydataSumanDb",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach_6b0",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.cw_items",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy_6b0",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "dbo.@{item().source.table}"
+								},
+								{
+									"name": "Destination",
+									"value": "raw//@{item().destination.fileName}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "SqlServerSource",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings",
+										"maxConcurrentConnections": 5
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"enableSkipIncompatibleRow": true,
+								"validateDataConsistency": false,
+								"logSettings": {
+									"enableCopyActivityLog": true,
+									"copyActivityLogSettings": {
+										"logLevel": "Warning",
+										"enableReliableLogging": false
+									},
+									"logLocationSettings": {
+										"linkedServiceName": {
+											"referenceName": "AzureDataLakeStorage1",
+											"type": "LinkedServiceReference"
+										}
+									}
+								},
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceDataset_6b0",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_table": "@item().source.table"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DestinationDataset_6b0",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_fileName": "@item().destination.fileName"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"cw_items": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"source": {
+							"table": "cus"
+						},
+						"destination": {
+							"fileName": "dbo.cus.csv"
+						}
+					},
+					{
+						"source": {
+							"table": "cus1"
+						},
+						"destination": {
+							"fileName": "dbo.cus1.csv"
+						}
+					},
+					{
+						"source": {
+							"table": "cus2"
+						},
+						"destination": {
+							"fileName": "dbo.cus2.csv"
+						}
+					},
+					{
+						"source": {
+							"table": "dimCustomer"
+						},
+						"destination": {
+							"fileName": "dbo.dimCustomer.csv"
+						}
+					},
+					{
+						"source": {
+							"table": "jo1"
+						},
+						"destination": {
+							"fileName": "dbo.jo1.csv"
+						}
+					},
+					{
+						"source": {
+							"table": "joi"
+						},
+						"destination": {
+							"fileName": "dbo.joi.csv"
+						}
+					},
+					{
+						"source": {
+							"table": "person"
+						},
+						"destination": {
+							"fileName": "dbo.person.csv"
+						}
+					},
+					{
+						"source": {
+							"table": "Products"
+						},
+						"destination": {
+							"fileName": "dbo.Products.csv"
+						}
+					},
+					{
+						"source": {
+							"table": "stgCustomer"
+						},
+						"destination": {
+							"fileName": "dbo.stgCustomer.csv"
+						}
+					},
+					{
+						"source": {
+							"table": "sysdiagrams"
+						},
+						"destination": {
+							"fileName": "dbo.sysdiagrams.csv"
+						}
+					},
+					{
+						"source": {
+							"table": "Testtable"
+						},
+						"destination": {
+							"fileName": "dbo.Testtable.csv"
+						}
+					}
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-03-03T11:40:28Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
