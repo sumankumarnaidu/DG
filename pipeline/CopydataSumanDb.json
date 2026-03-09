@@ -97,6 +97,22 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Wait activity",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "ForEach_6b0",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 30
+				}
 			}
 		],
 		"parameters": {
