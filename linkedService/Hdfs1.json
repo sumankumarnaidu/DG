@@ -1,0 +1,16 @@
+{
+	"name": "Hdfs1",
+	"properties": {
+		"annotations": [],
+		"type": "Hdfs",
+		"typeProperties": {
+			"url": "Suman",
+			"authenticationType": "Anonymous",
+			"userName": "suman"
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
