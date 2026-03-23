@@ -1,0 +1,19 @@
+{
+	"name": "MetadataDrivenCopyTask_2b5_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "metalinkedService1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_2b5_20260323"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Control",
+			"table": "configuration"
+		}
+	}
+}
